@@ -1,0 +1,13 @@
+extends ../../common/layout/layout
+block append meta
+    title 测试文件
+block localCss
+    link(rel="stylesheet" href="css/test.css")
+block script
+    script(src="js/test.js")
+block content
+    p hello world
+    p 成功失败
+    ul.item
+        -for(var i=0;i<10;i++)
+            li.item__list 亚洲雄风
