@@ -1,6 +1,11 @@
 {
   "presets": [
-    "es2015"
+    ["env", {
+      "targets": {
+        "browsers": ["iOS >= 7", "Android >= 4.1"]
+      },
+      "modules": false
+    }]
   ],
-  "plugins": []
+  "plugins": ["transform-runtime"]
 }
