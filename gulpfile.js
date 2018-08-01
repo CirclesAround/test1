@@ -10,10 +10,10 @@ let browserSync = require("browser-sync") // 修改后实时同步刷新浏览�
 let del = require("del") // 删除文件
 let rename = require("gulp-rename") // 重命名
 let plumber = require("gulp-plumber") // 构建异常捕获，防止构建进程崩掉；出错不中断
-let rollup = require("gulp-better-rollup") // 转换内容 下面四个一起使用,js打包模块
+let rollup = require("gulp-better-rollup") // 处理读取文件，构建依赖关系树，转换内容，然后编写转换后的文件 下面四个一起使用,js打包模块
 let babel = require("rollup-plugin-babel") // es6转为es5
-let commonjs = require("rollup-plugin-commonjs") // 这个和下面的一起用
-let resolve = require("rollup-plugin-node-resolve")  //帮助 rollup 查找外部模块，然后安装
+let commonjs = require("rollup-plugin-commonjs") // 将非ES6语法的包转为ES6可用；node_modules中的包大部分都是commonjs格式的，要在rollup中使用必须先转为ES6语法，为此需要安装这个插件
+let resolve = require("rollup-plugin-node-resolve")  //帮助 rollup 查找外部模块，帮助寻找node_modules里的包;rollup无法识别node_modules中的包,需要使用这个插件，然后在plugins中使用
 gulp.task('css', function () {
     return gulp.src('src/*/css/*.less')
         .pipe(watch('src/*/css/*.less'))
