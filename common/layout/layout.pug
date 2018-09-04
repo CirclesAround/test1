@@ -5,6 +5,8 @@ html
             meta(charset="UTF-8")
             meta(name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no")
             meta(name="format-detection" content="telephone=no,email=no")
+        block fontSize
+            include:uglify-js ../util/font_size.js
         block localCss
             link(rel="stylesheet" href="css/index.css")
         block commonJs
