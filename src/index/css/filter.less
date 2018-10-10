@@ -1,1 +1,54 @@
 @import "../../../common/rest/common-style";
+p{
+  width: 5rem;
+  height: 5rem;
+}
+.photo-border-effect {
+  background-image: url("http://img3.imgtn.bdimg.com/it/u=3822786205,1307808312&fm=26&gp=0.jpg"), url("http://img4.imgtn.bdimg.com/it/u=4175444154,1652651378&fm=26&gp=0.jpg");
+  background-position: center;
+  background-size: 60%, 20%;
+  background-repeat: no-repeat, repeat;
+}
+.warhol-effect {
+  background-image: url("http://img3.imgtn.bdimg.com/it/u=3822786205,1307808312&fm=26&gp=0.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@supports (background-blend-mode: color) {
+  .warhol-effect {
+    background-image: linear-gradient(#14EBFF 0, #14EBFF 50%, #FFFF70 50%, #FFFF70 100%), linear-gradient(#FF85DA 0, #FF85DA 50%, #AAA 50%, #AAA 100%), url("http://img3.imgtn.bdimg.com/it/u=3822786205,1307808312&fm=26&gp=0.jpg");
+    background-size: 50% 100%, 50% 100%, 50% 50%;
+    background-position: top left, top right;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-blend-mode: color;
+  }
+}
+.mirror-y-effect {
+  background-image: url("http://img.daimg.com/uploads/allimg/180829/3-1PR9223Z90-L.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@supports (transform: scaleY(-1)) {
+  .mirror-y-effect {
+    position: relative;
+  }
+  .mirror-y-effect:before, .mirror-y-effect:after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: inherit;
+  }
+  .mirror-y-effect:before {
+    top: 0;
+    bottom: 50%;
+    transform: scaleY(-1);
+  }
+  .mirror-y-effect:after {
+    top: 50%;
+    bottom: 0;
+  }
+}
