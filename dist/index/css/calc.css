@@ -1,0 +1,11 @@
+html {
+  font-size: 13.33333333vw;
+}
+body {
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+  font-size: 0.3rem;
+  line-height: 1.6;
+}
+* {
+  margin: 0;
+}
